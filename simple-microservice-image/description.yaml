@@ -1,0 +1,10 @@
+build:
+  env:
+    type: microservice
+    version: generic-1.0
+  networkRules: sandbox
+
+publication:
+  docker:
+    - timestamp
+    - latest

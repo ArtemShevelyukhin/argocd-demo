@@ -1,0 +1,7 @@
+include:
+  - project: 'PROD.INMRND.MANO/DevOps/unified-service-pipeline'
+    ref: master
+    file: 'ci_templates/.gitlab-ci-template.yml'
+  - project: 'PROD.INMRND.MANO/DevOps/unified-service-pipeline'
+    ref: master
+    file: 'ci_templates/stages/default.yml'
