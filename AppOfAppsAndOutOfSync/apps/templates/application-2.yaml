@@ -24,8 +24,5 @@ spec:
     repoURL: https://github.com/ArtemShevelyukhin/argocd-demo.git
     targetRevision: HEAD
     helm:
-      parameters:
-      - name: "image.repository"
-        value: nginx
-      - name: "image.tag"
-        value: latest
+      values: |
+        qwe: asd
