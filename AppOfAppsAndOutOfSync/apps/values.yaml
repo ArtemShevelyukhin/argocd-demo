@@ -1,0 +1,9 @@
+spec:
+  destination:
+    server: "https://kubernetes.default.svc"
+
+deploy:
+  namespace: argocd
+  argo_namespace: argocd
+  project: default
+
