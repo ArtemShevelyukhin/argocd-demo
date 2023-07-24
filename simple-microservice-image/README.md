@@ -1,2 +1,0 @@
-# simple-microservice-image
-
