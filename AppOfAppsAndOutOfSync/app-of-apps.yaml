@@ -17,4 +17,3 @@ spec:
     helm: {}
   destination:
     server: "https://kubernetes.default.svc"
-#    namespace: tmnl-2
