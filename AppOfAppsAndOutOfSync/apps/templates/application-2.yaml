@@ -20,7 +20,7 @@ spec:
     namespace: {{ $.Values.deploy.namespace }}
   project: {{ $.Values.deploy.project }}
   source:
-    path: deployments/charts/simple-microservice-2
+    path: simple-microservice-2/charts
     repoURL: https://github.com/ArtemShevelyukhin/argocd-demo.git
     targetRevision: HEAD
     helm:
