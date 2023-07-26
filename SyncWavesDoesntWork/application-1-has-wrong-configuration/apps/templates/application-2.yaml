@@ -23,6 +23,6 @@ spec:
     path: simple-microservice-2/charts
     repoURL: https://github.com/ArtemShevelyukhin/argocd-demo.git
     targetRevision: HEAD
-    helm:
-      values: |
-        fail: true
+{{/*    helm:*/}}
+{{/*      values: |*/}}
+{{/*        fail: true*/}}
