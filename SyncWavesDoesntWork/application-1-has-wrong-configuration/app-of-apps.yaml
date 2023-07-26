@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-apps
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+  project: default
+  source:
+    repoURL: https://github.com/ArtemShevelyukhin/argocd-demo.git
+    path: SyncWavesDoesntWork/application-1-has-wrong-configuration/apps
+    targetRevision: HEAD
+    helm: {}
+  destination:
+    server: "https://kubernetes.default.svc"
