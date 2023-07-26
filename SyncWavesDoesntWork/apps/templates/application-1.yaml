@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: application-1
+  namespace: {{ $.Values.deploy.argo_namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+    - FailOnSharedResource=true
+    retry:
+      limit: 0
+  destination:
+    server: {{ $.Values.spec.destination.server }}
+    namespace: {{ $.Values.deploy.namespace }}
+  project: {{ $.Values.deploy.project }}
+  source:
+    path: simple-microservice-2/charts
+    repoURL: https://github.com/ArtemShevelyukhin/argocd-demo.git
+    targetRevision: HEAD
+    helm:
+      values: |
+        qwe: asd
