@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/ArtemShevelyukhin/argocd-demo.git
-    path: SyncWavesDoesntWork/apps
+    path: SyncWavesDoesntWork/application-2-is-broken/apps
     targetRevision: HEAD
     helm: {}
   destination:
