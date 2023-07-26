@@ -21,7 +21,7 @@ spec:
   project: {{ $.Values.deploy.project }}
   source:
     path: simple-microservice-2/charts
-    repoURL: https://github.com/ArtemShevelyukhin/argocd-demo.git
+    repoURL: https://github.com/ArtemShevelyukhin/argocd-demoAAA.git
     targetRevision: HEAD
     helm:
       values: |
