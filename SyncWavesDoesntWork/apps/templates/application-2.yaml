@@ -25,4 +25,4 @@ spec:
     targetRevision: HEAD
     helm:
       values: |
-        qwe: asd
+        fail: true
