@@ -11,16 +11,16 @@ spec:
       prune: true
   project: default
   source:
-    repoURL:
-    path: argocd-vault-plugin/working-config/apps
+    repoURL: https://github.com/ArtemShevelyukhin/argocd-demo.git
+    path: argocd-vault-plugin/issue-532/working-config/apps
     targetRevision: HEAD
     plugin:
       env:
         - name: AVP_TYPE
           value: sops
-#        - name: SOPS_AGE_KEY_FILE
-#          value: /age-private-key/age-key.txt
-      name: argocd-vault-plugin-helm
+##        - name: SOPS_AGE_KEY_FILE
+##          value: /age-private-key/age-key.txt
+#      name: argocd-vault-plugin-helm
   destination:
     server: "https://kubernetes.default.svc"
     namespace: tmnl-2

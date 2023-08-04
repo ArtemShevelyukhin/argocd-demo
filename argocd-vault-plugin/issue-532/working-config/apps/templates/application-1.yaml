@@ -5,7 +5,6 @@ metadata:
   namespace: {{ $.Values.deploy.argo_namespace }}
   annotations:
     argocd.argoproj.io/sync-wave: "1"
-    avp.kubernetes.io/path: "secrets.enc.yaml"
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -21,8 +20,8 @@ spec:
     namespace: {{ $.Values.deploy.namespace }}
   project: {{ $.Values.deploy.project }}
   source:
-    path: argocd-vault-plugin/helm-chart
-    repoURL:
+    path: argocd-vault-plugin/issue-532/helm-chart
+    repoURL: https://github.com/ArtemShevelyukhin/argocd-demo.git
     targetRevision: HEAD
     plugin:
       env:
@@ -30,11 +29,4 @@ spec:
           value: sops
         - name: SOPS_AGE_KEY_FILE
           value: /age-private-key/age-key.txt
-        - name: some_var
-          value: <test>
       name: argocd-vault-plugin-helm
-{{/*    helm:*/}}
-{{/*      valueFiles:*/}}
-{{/*        - secrets+age-import://secrets.enc.yaml*/}}
-{{/*        - secrets.yaml*/}}
-{{/*        - secrets+gpg-import:///helm-secrets-private-keys/key.asc?secrets.enc.yaml*/}}
