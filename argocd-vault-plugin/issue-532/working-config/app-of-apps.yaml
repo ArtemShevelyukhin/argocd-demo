@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app-of-apps
-  namespace: argocd
+  namespace: argocd-arsh1018
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -11,9 +11,16 @@ spec:
       prune: true
   project: default
   source:
-    repoURL: https://github.com/ArtemShevelyukhin/argocd-demo.git
-    path: SyncWavesDoesntWork/application-2-is-broken/apps
+    repoURL:
+    path: argocd-vault-plugin/working-config/apps
     targetRevision: HEAD
-    helm: {}
+    plugin:
+      env:
+        - name: AVP_TYPE
+          value: sops
+#        - name: SOPS_AGE_KEY_FILE
+#          value: /age-private-key/age-key.txt
+      name: argocd-vault-plugin-helm
   destination:
     server: "https://kubernetes.default.svc"
+    namespace: tmnl-2
