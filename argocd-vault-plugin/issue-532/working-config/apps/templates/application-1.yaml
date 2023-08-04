@@ -27,6 +27,6 @@ spec:
       env:
         - name: AVP_TYPE
           value: sops
-        - name: SOPS_AGE_KEY_FILE
-          value: /age-private-key/age-key.txt
+{{/*        - name: SOPS_AGE_KEY_FILE*/}}
+{{/*          value: /age-private-key/age-key.txt*/}}
       name: argocd-vault-plugin-helm
